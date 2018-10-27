@@ -1,5 +1,4 @@
 import React from 'react';
-import CardList from './CardList';
 
 const SearchBox = ({onSearch}) => {
 	return(
