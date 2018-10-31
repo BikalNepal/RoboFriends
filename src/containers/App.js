@@ -17,10 +17,17 @@ class App extends Component {
 		this.setState({searchfield: event.target.value})
 	}
 
-	componentDidMount() {
-		fetch('https://jsonplaceholder.typicode.com/users')
-		.then(response => response.json())
-		.then(blabla => this.setState({robots: blabla}));
+	async componentDidMount() {
+		try{
+			const fetched = await fetch('https://jsonplaceholder.typicode.com/users')
+			const response = await fetched.json()
+			this.setState({robots: response})
+		}
+		catch(err){
+			console.log('The error is: ', err);
+		}
+
+		
 	}
 
 
